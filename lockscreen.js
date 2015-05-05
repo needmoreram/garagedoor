@@ -15,28 +15,35 @@ var btop = rh * 163 / 568;
 var bvsp = rh *  13 / 568;
 
 var buttons = []
+var caption = ["", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ", ""]
 var nattr = {
 	fill: "#fff",
 	stroke: "#000",
+    opacity: 0.5
 }
 var hlattr = {
 	fill: "#000",
-	stroke: "#000"
+	stroke: "#000",
+    opacity: 0.5
 }
 
 for (var i = 0; i < 3; i ++) {
     for (var j = 0; j < 3; j ++) {
+        var p = paper.text(blef + bhsp * j + brad * (2 * j + 1),
+        		           btop + bvsp * i + brad * (2 * i + 1) - rh / 50,
+        		           3 * i + j + 1);
+        p.attr({font: "200 " + rh * 25 / 476 + "px Helvetica neue, sans-serif"});
+        var t = paper.text(blef + bhsp * j + brad * (2 * j + 1),
+                           btop + bvsp * i + brad * (2 * i + 1) + rh / 50,
+                           caption[3 * i + j]);
+        t.attr({font: "200 100% px Helvetica neue, sans-serif"});
         buttons[3 * i + j] = paper.circle(blef + bhsp * j + brad * (2 * j + 1),
                                           btop + bvsp * i + brad * (2 * i + 1),
                                           brad);
-        var p = paper.text(blef + bhsp * j + brad * (2 * j + 1),
-				           btop + bvsp * i + brad * (2 * i + 1) - rh / 100,
-				           3 * i + j + 1);
-        p.attr({font: "200 " + rh * 25 / 476 + "px Helvetica neue, sans-serif"});
     }
 }
 
-buttons[3 * i] = paper.circle(blef + bvsp + brad * 3,
+buttons[3 * i] = paper.circle(blef + bhsp + brad * 3,
                               btop + bvsp * 3 + brad * 7,
                               brad);
 
