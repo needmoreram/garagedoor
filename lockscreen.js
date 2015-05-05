@@ -33,10 +33,12 @@ for (var i = 0; i < 3; i ++) {
         		           btop + bvsp * i + brad * (2 * i + 1) - rh / 50,
         		           3 * i + j + 1);
         p.attr({font: "200 " + rh * 25 / 476 + "px Helvetica neue, sans-serif"});
+        p.node.setAttribute("class", "noselect");
         var t = paper.text(blef + bhsp * j + brad * (2 * j + 1),
                            btop + bvsp * i + brad * (2 * i + 1) + rh / 50,
                            caption[3 * i + j]);
         t.attr({font: "200 100% px Helvetica neue, sans-serif"});
+        t.node.setAttribute("class", "noselect");
         buttons[3 * i + j] = paper.circle(blef + bhsp * j + brad * (2 * j + 1),
                                           btop + bvsp * i + brad * (2 * i + 1),
                                           brad);
