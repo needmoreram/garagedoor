@@ -15,7 +15,7 @@ var btop = rh * 163 / 568;
 var bvsp = rh *  13 / 568;
 
 var buttons = []
-var caption = ["", "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ", ""]
+var caption = ["", "A B C", "D E F", "G H I", "J K L", "M N O", "P Q R S", "T U V", "W X Y Z", ""]
 var nattr = {
 	fill: "#fff",
 	stroke: "#000",
@@ -30,14 +30,14 @@ var hlattr = {
 for (var i = 0; i < 3; i ++) {
     for (var j = 0; j < 3; j ++) {
         var p = paper.text(blef + bhsp * j + brad * (2 * j + 1),
-        		           btop + bvsp * i + brad * (2 * i + 1) - rh / 50,
+        		           btop + bvsp * i + brad * (2 * i + 1) - rh / 60,
         		           3 * i + j + 1);
-        p.attr({font: "200 " + rh * 25 / 476 + "px Helvetica neue, sans-serif"});
+        p.attr({font: "200 " + rh * 33 / 523 + "px Helvetica neue, sans-serif"});
         p.node.setAttribute("class", "noselect");
         var t = paper.text(blef + bhsp * j + brad * (2 * j + 1),
-                           btop + bvsp * i + brad * (2 * i + 1) + rh / 50,
+                           btop + bvsp * i + brad * (2 * i + 1) + rh / 35,
                            caption[3 * i + j]);
-        t.attr({font: "200 100% px Helvetica neue, sans-serif"});
+        t.attr({font: "400 " + rh * 10 / 523 + "px Helvetica neue, sans-serif"});
         t.node.setAttribute("class", "noselect");
         buttons[3 * i + j] = paper.circle(blef + bhsp * j + brad * (2 * j + 1),
                                           btop + bvsp * i + brad * (2 * i + 1),
@@ -58,15 +58,17 @@ for (var b in buttons) {
 	})(buttons[b], b);
 }
 
-// var p = paper.text(blef + brad, btop + brad, "8");
-// p.attr({font: "200 " + rh * 25 / 476 + "px Helvetica neue, sans-serif"});
-
-/* var trad = rw *  5 / 256;
+var trad = rw *  5 / 256;
 var tlef = rw * 99 / 320;
 var thsp = rw * 24 / 320;
 var ttop = rh * 103 / 568;
 
-for (var i = 0; i < 4; i ++)
-    drawCircle(tlef + thsp * i + trad * (2 * i + 1),
-               ttop + trad,
-               trad); */
+var ou = []
+
+for (var i = 0; i < 4; i ++) {
+    var b = paper.circle(tlef + thsp * i + trad * (2 * i + 1),
+                         ttop + trad,
+                         trad);
+    b.attr(nattr);
+    ou[i] = b;
+}
