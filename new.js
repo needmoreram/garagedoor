@@ -50,7 +50,7 @@ var Keypad = function() {
         rad: this.keyw * 15 / 128
     };
     this.oububbleM = {
-        left: this.keyw * 99 / 320,
+        left: this.keyw * 239 / 1280,
         top: this.keyh * 103 / 568,
         hsp: this.keyw * 24 / 320,
         rad: this.keyh * 5 / 256
