@@ -19,8 +19,8 @@ var Keypad = function() {
     this.oububble = [];
     this.oumode = 4;
     this.upattr = {
-        fill: "#fff",
-        stroke: "#000",
+        fill: "#f00",
+        stroke: "#f00",
         "fill-opacity": 0
     };
     this.downattr = {
@@ -144,3 +144,5 @@ for (var i = 0; i < 4; i ++) {
     ou[i] = b;
 }
 */
+
+new Keypad().draw()
